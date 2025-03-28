@@ -55,6 +55,7 @@
 #include <nuttx/vhost/vhost.h>
 #include <nuttx/virtio/virtio.h>
 #include <nuttx/drivers/optee.h>
+#include <nuttx/drivers/rpmsg_audio_server.h>
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -286,6 +287,10 @@ void drivers_initialize(void)
 
 #ifdef CONFIG_THERMAL
   thermal_init();
+#endif
+
+#ifdef CONFIG_RPMSG_AUDIO_SERVER
+  rpmsg_audio_server_init();
 #endif
 
   drivers_trace_end();

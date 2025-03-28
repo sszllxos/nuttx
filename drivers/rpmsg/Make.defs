@@ -60,6 +60,10 @@ ifeq ($(CONFIG_RPMSG_VIRTIO_IVSHMEM),y)
 CSRCS += rpmsg_virtio_ivshmem.c
 endif
 
+ifeq ($(CONFIG_RPMSG_AUDIO_SERVER),y)
+CSRCS += rpmsg_audio_server.c
+endif
+
 DEPPATH += --dep-path rpmsg
 VPATH += :rpmsg
 
